@@ -9,8 +9,8 @@ app.get('/', (req, res) => {
 
 app.use(express.static('.'));
 
-let testNo = 0;
 app.use('/pshuu', (req, res) => {
+    let testNo = 0;
     res.setHeader('Content-Type', 'text/event-stream');
     setInterval(() => {
         res.write('data:' + testNo + '\n\n', () => {
